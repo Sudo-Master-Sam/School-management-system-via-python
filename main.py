@@ -66,12 +66,12 @@ class RoundedButton(tk.Canvas):
 class MainApp:
     def __init__(self):
         self.win = tk.Tk()
-        self.win.title("SPS Management System")
+        self.win.title("School Management System")
         self.win.geometry("1000x800")
         self.win.configure(bg="#f0f0f0")
 
         # ---------------- Header ----------------
-        tk.Label(self.win, text="SPS Management System",
+        tk.Label(self.win, text="School Management System",
                  font=("Arial", 20, "bold"),
                  bg="#2c3e50", fg="white", pady=20).pack(fill="x")
 
@@ -127,3 +127,4 @@ class MainApp:
 
 if __name__ == "__main__":
     MainApp()
+
