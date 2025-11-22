@@ -99,12 +99,12 @@ class MainApp:
         # ---------------- Remove Old Records Button ----------------
         def remove_old_records():
             confirm = messagebox.askyesno("Confirm Deletion",
-                                          "Are you sure you want to delete records older than 3 months?")
+                                          "Are you sure you want to delete records older than 1 year ?")
             if not confirm:
                 return
 
-            three_months_ago = datetime.now() - timedelta(days=90)
-            cutoff = three_months_ago.strftime("%Y-%m-%d")
+            one_year_ago = datetime.now() - timedelta(days=365)
+            cutoff = one_year_ago.strftime("%Y-%m-%d")
             conn = get_connection()
             cur = conn.cursor()
             try:
@@ -118,7 +118,7 @@ class MainApp:
             finally:
                 conn.close()
 
-        delete_btn = RoundedButton(frame, "Remove Records > 3 Months", command=remove_old_records,
+        delete_btn = RoundedButton(frame, "Remove Records > 1 Year", command=remove_old_records,
                                    bg="#e74c3c", hover_bg="#c0392b", width=350, height=70)
         delete_btn.grid(row=4, column=1, padx=25, pady=25)
 
@@ -127,4 +127,3 @@ class MainApp:
 
 if __name__ == "__main__":
     MainApp()
-
